@@ -14,6 +14,8 @@ You can update this cloudformation stack with current stack and update `Paramete
 
 Or alternatively, update this cloudformation stack with template URL provided from [pahud/eks-template](pahud/eks-template).
 
+**Please Note**: You need to configure each public subnet as "**Auto Assign IPv4 public IP**" in the [VPC/Subnet console.]( VPC/Subnet console)This is a known issue of this alternative template.
+
 ![0-c9-0](../images/01-03.png)
 
 
@@ -49,6 +51,12 @@ click Next and update your existing cloudformation stack
 
 
 Now you have a customized `ASG` and a customized `SpotFleet` registering to the same K8s nodegroup.
+
+You can list nodes from `ASG` and nodes from `SpotFleet` like this:
+
+![0-c9-0](../images/01-08.png)
+
+(this cluster consists of 2 on-demand nodes fron ASG and 3 spot nodes from spotfleet)
 
 ### What's Next?
 
