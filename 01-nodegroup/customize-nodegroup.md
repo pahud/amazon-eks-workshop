@@ -49,3 +49,7 @@ click Next and update your existing cloudformation stack
 
 
 Now you have a customized `ASG` and a customized `SpotFleet` registering to the same K8s nodegroup.
+
+### What's Next?
+
+The official Amazon EKS nodegroup cloudformation template can be found here - https://github.com/awslabs/amazon-eks-ami/blob/master/amazon-eks-nodegroup.yaml  - you can always customize your own nodegroup template based on the official one.
