@@ -9,7 +9,7 @@ This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](
 
 [Customize your nodegroup(worker nodes)](./01-nodegroup/customize-nodegroup.md)
 
-Working with kubectl for basic administrations
+[Working with kubectl for basic administrations](./02-kubectl-basic-admin/kubectl-basic-admin.md)
 
 
 
