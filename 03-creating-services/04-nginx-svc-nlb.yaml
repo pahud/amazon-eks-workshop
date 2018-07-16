@@ -1,0 +1,37 @@
+# https://aws.amazon.com/tw/blogs/opensource/network-load-balancer-support-in-kubernetes-1-9/
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+spec: 
+  externalTrafficPolicy: Local
+  selector: 
+    app: nginx-pod
+  ports:
+    - name: web
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+    spec:
+      containers:
+      - name: nginx-pod
+        image: nginx
+        env:
+        - name: MY_TYPE
+          value: nginx
+        ports:
+        - containerPort: 80
