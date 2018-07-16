@@ -1,0 +1,51 @@
+## Customize your nodegroup(worker nodes)
+
+The `eksctl` by default will create your default nodegroup for you with cloudformation.
+
+![0-c9-0](../images/01-01.png)
+
+
+
+You can update this cloudformation stack with current stack and update `Parameters` to initiate the nodegroup update.
+
+![0-c9-0](../images/01-02.png)
+
+
+
+Or alternatively, update this cloudformation stack with template URL provided from [pahud/eks-template](pahud/eks-template).
+
+![0-c9-0](../images/01-03.png)
+
+
+
+click **Next** and you will need to update some Parameters as below
+
+![0-c9-0](../images/01-04.png)
+
+
+
+Get your MasterEndpoint by  `kc cluster-info`
+
+![0-c9-0](../images/00-c9-11.png)
+
+Copy the `https://.....eks.amazonaws.com` URL and paste into **MasterEndpoint** parameter.
+
+![0-c9-0](../images/01-05.png)
+
+
+
+Now you can define both an `AutoScaling Group` and a `SpotFleet` in this template.
+
+
+
+![0-c9-0](../images/01-06.png)
+
+
+
+click Next and update your existing cloudformation stack
+
+![0-c9-0](../images/01-07.png)
+
+
+
+Now you have a customized `ASG` and a customized `SpotFleet` registering to the same K8s nodegroup.
