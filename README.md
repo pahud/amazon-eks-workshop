@@ -17,7 +17,7 @@ This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](
 
 ClusterIP, NodePort and LoadBalancer
 
-Ingress Options
+[Ingress Options](./03-creating-services/ingress-options.md)
 
 
 
