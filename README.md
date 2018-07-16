@@ -7,7 +7,7 @@ This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](
 
 [Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md)
 
-Customize your nodegroup(worker nodes)
+[Customize your nodegroup(worker nodes)](./01-nodegroup/customize-nodegroup.md)
 
 Working with kubectl for basic administrations
 
