@@ -1,11 +1,11 @@
 # amazon-eks-workshop
-This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](https://github.com/pahud).
+This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](https://github.com/pahud)([Twitter](https://twitter.com/pahudnet)/[Facebook](https://www.facebook.com/pahudnet)). 
 
 
 
 ## Getting Started
 
-Create your EKS Cluster with kubectl
+[Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md)
 
 Customize your nodegroup(worker nodes)
 
