@@ -7,6 +7,8 @@ This is a repository of Amazon EKS workshop.
 
 [Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md)
 
+[Installing Helm]((./00-getting-started/installing-helm.md))
+
 [Customize your nodegroup(worker nodes)](./01-nodegroup/customize-nodegroup.md)
 
 [Working with kubectl for basic administrations](./02-kubectl-basic-admin/kubectl-basic-admin.md)
