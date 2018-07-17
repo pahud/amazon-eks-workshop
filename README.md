@@ -1,5 +1,5 @@
 # amazon-eks-workshop
-This is a repository of Amazon EKS workshop originally created by [Pahud Hsieh](https://github.com/pahud)([Twitter](https://twitter.com/pahudnet)/[Facebook](https://www.facebook.com/pahudnet)). 
+This is a repository of Amazon EKS workshop.
 
 
 
@@ -23,7 +23,7 @@ ClusterIP, NodePort and LoadBalancer
 
 ## Development with Amazon EKS
 
-Create your 1st app from scratch and deploy into Amazon EKS
+[Create your 1st app from scratch and deploy into Amazon EKS](https://github.com/pahud/greeting)
 
 
 
@@ -74,4 +74,8 @@ Fluentd integration
 Istio
 
 
+
+## Contributors
+
+- [Pahud Hsieh](https://github.com/pahud)([Twitter](https://twitter.com/pahudnet)/[Facebook](https://www.facebook.com/pahudnet)). 
 
