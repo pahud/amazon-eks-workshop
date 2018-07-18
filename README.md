@@ -17,7 +17,7 @@ This is a repository of Amazon EKS workshop.
 
 ## Creating Services
 
-ClusterIP, NodePort and LoadBalancer
+[ClusterIP, NodePort and LoadBalancer](https://github.com/pahud/amazon-eks-workshop/tree/master/03-creating-services)
 
 [Ingress Options](./03-creating-services/ingress-options.md)
 
