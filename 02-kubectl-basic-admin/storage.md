@@ -112,7 +112,7 @@ web-5     1/1       Running   0          1m
 
 
 
-### Delete all
+### Delete all StatefulSet
 
 ```
 $ kc delete -f nginx-with-ss.yaml
@@ -121,4 +121,10 @@ statefulset.apps "web" deleted
 ```
 
 
+
+### Delete all PV and PVC
+
+```
+$ kc delete --all pv,pvc
+```
 
