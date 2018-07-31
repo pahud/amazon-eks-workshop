@@ -1,0 +1,40 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nginx-with-pvc
+  labels:
+    name: nginx-with-pvc
+
+spec:
+  storageClassName: gp2
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 6Gi
+  # selector:
+  #   matchLabels:
+  #     aws-availability-zone: us-west-2c
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-with-pvc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        service: nginx
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-with-pvc
+        volumeMounts:
+        - mountPath: /test-ebs
+          name: my-pvc
+      volumes:
+      - name: my-pvc
+        persistentVolumeClaim:
+          claimName: nginx-pvc
