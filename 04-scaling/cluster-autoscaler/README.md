@@ -28,6 +28,14 @@ This will specify the `min` as `2` and `max` to `8` on the `EKS-myeks-DefaultNod
 
 
 
+#### Inline Policy for EC2 IAM Role
+
+Attach extra IAM inline policy(**template/asg-policy.json**) to the EC2 IAM role.
+
+![](./images/eks-autoscaler-05.png)
+
+
+
 ### Apply the YAML 
 
 
