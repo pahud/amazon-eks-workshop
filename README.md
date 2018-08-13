@@ -15,6 +15,8 @@ This is a repository of Amazon EKS workshop.
 
 [Storage(PV, PVC and StatefulSet)](./02-kubectl-basic-admin/storage.md)
 
+[Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md)
+
 
 
 ## Creating Services
