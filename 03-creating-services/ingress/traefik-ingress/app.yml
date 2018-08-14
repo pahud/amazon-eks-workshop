@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: greeting-service
+spec: 
+  selector: 
+    app: greeting-pod
+  ports:
+    - name: web
+      port: 80
+      targetPort: 8080
+  #type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: greeting
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: greeting-pod
+    spec:
+      tolerations:
+      - key: "spotInstance"
+        # operator: "Exists"
+        value: "true"
+        effect: "PreferNoSchedule"   
+      containers:
+      - name: greeting-pod
+        image: pahud/greeting:latest
+        env:
+        - name: MY_TYPE
+          value: greeting
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: caddy-service
+spec: 
+  selector: 
+    app: caddy-pod
+  ports:
+    - name: web
+      port: 80
+      targetPort: 2015
+  #type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: caddy
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: caddy-pod
+    spec:
+      containers:
+      - name: caddy-pod
+        image: abiosoft/caddy:php
+        #image: abiosoft/caddy
+        env:
+        - name: MY_TYPE
+          value: caddy
+        ports:
+        - containerPort: 2015
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-service
+spec: 
+  selector: 
+    app: nginx-pod
+  ports:
+    - name: web
+      port: 80
+      targetPort: 80
+  #type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+    spec:
+      containers:
+      - name: nginx-pod
+        image: nginx
+        env:
+        - name: MY_TYPE
+          value: nginx
+        ports:
+        - containerPort: 80
