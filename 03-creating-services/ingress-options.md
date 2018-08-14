@@ -22,13 +22,9 @@ https://docs.traefik.io/user-guide/kubernetes/
 
 **Build your hybrid cluster of on-demand and spotfleet with Traefik Ingress**
 
-https://github.com/pahud/k8s-on-aws-workshop/tree/master/traefik-ingress
+https://github.com/pahud/amazon-eks-workshop/blob/master/03-creating-services/ingress/traefik-ingress/README.md
 
-![](https://github.com/pahud/k8s-on-aws-workshop/raw/master/traefik-ingress/images/aws-traefik-alb.png)
-
-
-
-
+![](ingress/traefik-ingress/images/EKS-Traefik-Ingress.png)
 
 
 
