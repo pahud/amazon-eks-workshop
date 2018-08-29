@@ -74,6 +74,10 @@ $ kc get deploy,rs,po
 
 Now, expose the deployment as a `Service` with Type=**LoadBalancer**.
 
+```
+$ kc expose deploy/nginx --port 80 --target-port 80 --type LoadBalancer
+```
+
 
 
 ![02-01](../images/02-03.png)
