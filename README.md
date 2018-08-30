@@ -13,8 +13,6 @@ This is a repository of Amazon EKS workshop.
 
 [Working with kubectl for basic administrations](./02-kubectl-basic-admin/kubectl-basic-admin.md)
 
-[Storage(PV, PVC and StatefulSet)](./02-kubectl-basic-admin/storage.md)
-
 
 
 ## Creating Services
@@ -39,7 +37,7 @@ This is a repository of Amazon EKS workshop.
 
 ## Storage
 
-PV, PVC and StatefulSets
+[Storage(PV, PVC and StatefulSet)](./02-kubectl-basic-admin/storage.md)
 
 
 
