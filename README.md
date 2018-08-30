@@ -15,8 +15,6 @@ This is a repository of Amazon EKS workshop.
 
 [Storage(PV, PVC and StatefulSet)](./02-kubectl-basic-admin/storage.md)
 
-[Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md)
-
 
 
 ## Creating Services
@@ -33,9 +31,9 @@ This is a repository of Amazon EKS workshop.
 
 
 
-## Helm
+## Spot and Lambda Integration
 
-Amazon EKS and Helm
+[pahud/eks-lambda-drainer](https://github.com/pahud/eks-lambda-drainer) - Amazon EKS node drainer with AWS Lambda
 
 
 
@@ -63,7 +61,7 @@ HPA(Horizontal Pod Autoscaling)
 
 VPA(Vertical Pod Autoscaling)
 
-CA(Cluster Autoscaler)
+CA([Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md))
 
 
 
@@ -77,7 +75,15 @@ Fluentd integration
 
 ## Service Mesh
 
-Istio
+Getting Started with Istio on Amazon EKS - https://amzn.to/2wo3inY
+
+
+
+## Amazon EKS and Amazon API Gateway Integration
+
+https://twitter.com/pahudnet/status/1030628314044452865
+
+https://twitter.com/pahudnet/status/1030629435664302085
 
 
 
