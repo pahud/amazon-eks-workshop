@@ -55,8 +55,8 @@ eksctl website:  https://eksctl.io/
 
    ```
    $ mkdir ~/bin
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl ~/bin/
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/bin/linux/amd64/heptio-authenticator-aws && chmod +x heptio-authenticator-aws && mv heptio-authenticator-aws ~/bin/
+   $ curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl ~/bin/
+   $ curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator && chmod +x aws-iam-authenticator && mv aws-iam-authenticator ~/bin/ && cd ~/bin && ln -s aws-iam-authenticator heptio-authenticator-aws
    ```
 
 9. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
@@ -87,10 +87,10 @@ $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-
 Then you should be able to `get nodes` like this:
 
 ```
-kubectl --kubeconfig=/home/ec2-user/.kube/eksctl/clusters/eksdemo get nodes
+kubectl --kubeconfig=/home/ec2-user/.kube/eksctl/clusters/{YOUR_CLUSTER_NAME} get nodes
 ```
 
-Let's configure an `alias` in `~/.bash_profile`.  Open `~/.bash_profile` with your favorite editor e.g. `vim` and add an alias in the bottom:
+Let's configure an `alias` in `~/.bash_profile`.  Open `~/.bash_profile` with your favorite editor e.g. `vi ~/.bash_profile` and add an alias in the bottom:
 
 ![0-c9-0](../images/00-c9-09.png)
 

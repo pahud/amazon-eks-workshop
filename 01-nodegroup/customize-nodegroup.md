@@ -8,13 +8,15 @@ The `eksctl` by default will create your default nodegroup for you with cloudfor
 
 You can update this cloudformation stack with current stack and update `Parameters` to initiate the nodegroup update.
 
-![0-c9-0](../images/01-02.png)
-
-
-
 Or alternatively, update this cloudformation stack with template URL provided from [pahud/eks-template](https://github.com/pahud/eks-templates).
 
-**Please Note**: You need to configure each public subnet as "**Auto Assign IPv4 public IP**" in the [VPC/Subnet console.]( VPC/Subnet console)This is a known issue of this alternative template.
+Paste the following URL into the "**Specify an Amazon S3 template URL**" input box
+
+```
+https://s3-us-west-2.amazonaws.com/pahud-cfn-us-west-2/eks-templates/cloudformation/nodegroup.yaml
+```
+
+
 
 ![0-c9-0](../images/01-03.png)
 
@@ -22,21 +24,21 @@ Or alternatively, update this cloudformation stack with template URL provided fr
 
 click **Next** and you will need to update some Parameters as below
 
+ **NodeImageId** - clear and empty this field to use the latest EKS-optimized AMI as default
+
+![0-c9-0](../images/01-02.png)
+
+**NodeAutoScalingGroupMaxSize** - make sure the value is higher than NodeAutoScalingGroupDesiredSize. You can set it to 3, 5 or any higher value.
+
 ![0-c9-0](../images/01-04.png)
 
 
 
-Get your MasterEndpoint by  `kc cluster-info`
-
-![0-c9-0](../images/00-c9-11.png)
-
-Copy the `https://.....eks.amazonaws.com` URL and paste into **MasterEndpoint** parameter.
-
-![0-c9-0](../images/01-05.png)
 
 
 
-Now you can define both an `AutoScaling Group` and a `SpotFleet` in this template.
+
+Now you can define both an `AutoScaling Group`(above) and a `SpotFleet`(below) in this template. Both ASG and SpotFleet will hybrid your default Amazon EKS nodegroup with different node labels respectively.
 
 
 
@@ -56,7 +58,7 @@ You can list nodes from `ASG` and nodes from `SpotFleet` like this:
 
 ![0-c9-0](../images/01-08.png)
 
-(this cluster consists of 2 on-demand nodes fron ASG and 3 spot nodes from spotfleet)
+(this cluster consists of 2 on-demand nodes fron ASG and 2 spot nodes from spotfleet)
 
 ### What's Next?
 
