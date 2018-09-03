@@ -63,7 +63,7 @@ $ kc autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 deployment.apps "php-apache" autoscaled
 ```
 
-get the hap
+get the hpa
 
 ```
 $ kc get hpa
