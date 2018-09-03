@@ -103,7 +103,7 @@ deployment.apps "nginx" image updated
 
 reload and see the `OpenResty` welcome page
 
-![02-05](../images/02-06.png)Edit the deployment and update the `image` to `abisoft/caddy:php` and `containerPort` to `2015`
+![02-05](../images/02-06.png)Edit the deployment and update the `image` to `abiosoft/caddy:php` and `containerPort` to `2015`
 
 ```
 $ kc edit deploy/nginx
