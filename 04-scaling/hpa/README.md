@@ -4,7 +4,7 @@
 
 [Create your Amazon EKS cluster with eksctl](https://github.com/pahud/amazon-eks-workshop/blob/master/00-getting-started/create-eks-with-eksctl.md)
 
-[Customize your nodegroup(worker nodes)](https://github.com/pahud/amazon-eks-workshop/blob/master/01-nodegroup/customize-nodegroup.md) **make sure to use the latest EKS-optimized AMI*
+[Customize your nodegroup(worker nodes)](https://github.com/pahud/amazon-eks-workshop/blob/master/01-nodegroup/customize-nodegroup.md) **make sure to use the latest EKS-optimized AMI(lookup the latest EKS-optimized AMI in [the doc](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html))* 
 
 make sure your Amazon EKS cluster is **eks.2** platform ([platform versions](https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html))
 
