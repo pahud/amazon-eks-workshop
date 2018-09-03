@@ -57,7 +57,7 @@ Drain
 
 ## AutoScaling
 
-HPA(Horizontal Pod Autoscaling)
+[HPA(Horizontal Pod Autoscaling)](./04-scaling/hpa/README.md)
 
 VPA(Vertical Pod Autoscaling)
 
