@@ -17,7 +17,7 @@ curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
 ### Create tiller ServiceAccount and ClusterRoleBinding
 
 ```
-$ kc apply -f https://gist.githubusercontent.com/pahud/14e6cc08f3a7e65cd9b0e8bed454a901/raw/954d71614dda911c4f7960f0d18687fa1ea093fa/helm-sa-rolebinding.yaml
+$ kubectl apply -f https://gist.githubusercontent.com/pahud/14e6cc08f3a7e65cd9b0e8bed454a901/raw/954d71614dda911c4f7960f0d18687fa1ea093fa/helm-sa-rolebinding.yaml
 ```
 
 

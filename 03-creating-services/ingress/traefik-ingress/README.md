@@ -16,7 +16,7 @@ This guide will walk you through building a Amazon EKS cluster with Traefik Ingr
 
    ```
    $ cd traefik-ingress
-   $ kc apply -f .
+   $ kubectl apply -f .
    service "greeting-service" created
    deployment.extensions "greeting" created
    service "caddy-service" created
@@ -30,11 +30,11 @@ This guide will walk you through building a Amazon EKS cluster with Traefik Ingr
    daemonset.extensions "traefik-ingress-lb" created
    ```
 
-4. `kc get svc` to list all the services make sure `caddy-service`, `greeting-service` and `nginx-service` are running
+4. `kubectl get svc` to list all the services make sure `caddy-service`, `greeting-service` and `nginx-service` are running
 
-5. `kc get ing` and make your `traefik-ingress` is running
+5. `kubectl get ing` and make your `traefik-ingress` is running
 
-6. `kc get svc -n kube-system` and make sure `traefik-ingress-lb-svc` is running on `NodePort` `31742` mapping to container port `80`
+6. `kubectl get svc -n kube-system` and make sure `traefik-ingress-lb-svc` is running on `NodePort` `31742` mapping to container port `80`
 
 
 
@@ -101,7 +101,7 @@ nodeSelector:
 Get all the `traefik ingress controller` pods. Please note they only run on `on demand` instances.
 
 ```
-$ kc get po -n kube-system -l name=traefik-ingress-lb -o wide
+$ kubectl get po -n kube-system -l name=traefik-ingress-lb -o wide
 NAME                       READY     STATUS    RESTARTS   AGE       IP                NODE
 traefik-ingress-lb-4djwc   1/1       Running   0          15m       192.168.102.191   ip-192-168-102-191.us-west-2.compute.internal
 traefik-ingress-lb-x9lts   1/1       Running   0          15m       192.168.142.221   ip-192-168-142-221.us-west-2.compute.internal
@@ -117,7 +117,7 @@ traefik-ingress-lb-x9lts   1/1       Running   0          15m       192.168.142.
 
 ```
 $ cd traefik-ingress
-$ kc delete -f .
+$ kubectl delete -f .
 service "greeting-service" deleted
 deployment.extensions "greeting" deleted
 service "caddy-service" deleted
