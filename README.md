@@ -1,5 +1,7 @@
 # amazon-eks-workshop
-This is a repository of Amazon EKS workshop.
+Amazon EKS workshop walkthrough repository. 
+
+This is a collection of Amazon EKS popular topics and assets aimed to help you successfully build your Amazon EKS workload.
 
 
 
@@ -43,6 +45,10 @@ This is a repository of Amazon EKS workshop.
 
 
 
+## Monitoring
+
+Kubernetes Dashboard
+
 ## Scheduling
 
 Affinity and Anti-Affinity
@@ -59,9 +65,11 @@ Drain
 
 [HPA(Horizontal Pod Autoscaling)](./04-scaling/hpa/README.md)
 
+[CA(Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md))
+
 VPA(Vertical Pod Autoscaling)
 
-CA([Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md))
+Autoscaling Group LifeCycle Hooks with Pod draining
 
 
 
@@ -70,6 +78,12 @@ CA([Cluster-Autoscaler](./04-scaling/cluster-autoscaler/README.md))
 ## Log Consolidation
 
 Fluentd integration
+
+
+
+## CI/CD
+
+[Amazon EKS with AWS CodeBuild integration](https://github.com/pahud/eks-kubectl-docker#codebuild-support) 
 
 
 
