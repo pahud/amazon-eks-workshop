@@ -104,8 +104,131 @@ Watch the screen and see how HPA scales the pods from 1 to 10 and eventually bri
 ![](images/03.png)
 
 
+# Troubleshooting
 
 
+## Metrics server resolution issue when using customzied domain-name in your VPC DHCP options set
+
+In some case, if you've launched your EKS cluster in your own VPC with customized [DHCP options set](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html#DHCPOptionSets), which applied to your own domain-name setting (i.e. example.com). After you deployed the metrics server, you probably will find out the failure information and unable to get the metric information:
+
+```bash
+$ kubectl get all --namespace=kube-system
+
+NAME                                  READY     STATUS    RESTARTS   AGE
+pod/aws-node-9xktg                    1/1       Running   1          18m
+pod/aws-node-mj95f                    1/1       Running   0          14m
+pod/kube-dns-7cc87d595-8s9l6          3/3       Running   0          46m
+pod/kube-proxy-rlhjm                  1/1       Running   0          14m
+pod/kube-proxy-x5t6x                  1/1       Running   0          18m
+pod/metrics-server-55b6ff4cb7-rp4bw   1/1       Running   0          3m
+...
+
+
+$ kubectl logs metrics-server-55b6ff4cb7-rp4bw --namespace=kube-system
+
+I0912 03:21:28.933854       1 serving.go:273] Generated self-signed cert (apiserver.local.config/certificates/apiserver.crt, apiserver.local.config/certificates/apiserver.key)
+W0912 03:21:29.624532       1 authentication.go:166] cluster doesn't provide client-ca-file in configmap/extension-apiserver-authentication in kube-system, so client certificate authentication to extension api-server won't work.
+W0912 03:21:29.629836       1 authentication.go:210] cluster doesn't provide client-ca-file in configmap/extension-apiserver-authentication in kube-system, so client certificate authentication to extension api-server won't work.
+[restful] 2018/09/12 03:21:29 log.go:33: [restful/swagger] listing is available at https://:443/swaggerapi
+[restful] 2018/09/12 03:21:29 log.go:33: [restful/swagger] https://:443/swaggerui/ is mapped to folder /swagger-ui/
+I0912 03:21:29.676485       1 serve.go:96] Serving securely on [::]:443
+...
+E0912 03:25:29.760003       1 manager.go:102] unable to fully collect metrics: [unable to fully scrape metrics from source kubelet_summary:ip-192-168-149-221.us-west-2.compute.internal: unable to fetch metrics from Kubelet ip-192-168-149-221.us-west-2.compute.internal (ip-192-168-149-221.example.com): Get https://ip-192-168-149-221.example.com:10250/stats/summary/: dial tcp: lookup ip-192-168-149-221.example.com on 10.100.0.10:53: no such host, unable to fully scrape metrics from source kubelet_summary:ip-192-168-225-105.us-west-2.compute.internal: unable to fetch metrics from Kubelet ip-192-168-225-105.us-west-2.compute.internal (ip-192-168-225-105.example.com): Get https://ip-192-168-225-105.example.com:10250/stats/summary/: dial tcp: lookup ip-192-168-225-105.example.com on 10.100.0.10:53: no such host]
+```
+
+If you try to use `kubectl top nodes` command, you may see the following error message:
+
+```
+$ kubectl top nodes
+
+error: metrics not available yet
+```
+
+This issue is due to the hostname resolution is being performed through the internal DNS server (which is set by default to the pod where the metrics-server runs in). The customized domain-name is not in that scope so they can't be resolved via that DNS.
+
+To fix this issue, you can update the deployment file of metrics server (`metrics-server/deply/1.8+/metrics-server-deployment.yaml`) by using internal IP address instead of the hostname to communicate with your nodes:
+
+```yaml
+command:
+  - /metrics-server
+  - --kubelet-insecure-tls
+  - --kubelet-preferred-address-types=InternalIP
+```
+
+Here is an example applying the command above (You need to `+` when updating the deplyoment file):
+
+```yaml
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+name: metrics-server
+namespace: kube-system
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+name: metrics-server
+namespace: kube-system
+labels:
+  k8s-app: metrics-server
+spec:
+selector:
+  matchLabels:
+    k8s-app: metrics-server
+template:
+  metadata:
+    name: metrics-server
+    labels:
+      k8s-app: metrics-server
+  spec:
+    serviceAccountName: metrics-server
+    volumes:
+    # mount in tmp so we can safely use from-scratch images and/or read-only containers
+    - name: tmp-dir
+      emptyDir: {}
+    containers:
+    - name: metrics-server
+      image: k8s.gcr.io/metrics-server-amd64:v0.3.0
+      imagePullPolicy: Always
++         command:
++           - /metrics-server
++           - --kubelet-insecure-tls
++           - --kubelet-preferred-address-types=InternalIP
+      volumeMounts:
+      - name: tmp-dir
+        mountPath: /tmp
+```
+
+Apply the deployment:
+
+```bash
+$ kubectl apply -f deploy/1.8+/
+```
+
+After updating the deployment, the configurations need to take some time to be active. Once it is done, you will see the metrics can be shown when using the `top` commands:
+
+
+```bash
+$ kubectl top nodes
+
+NAME                                            CPU(cores)   CPU%      MEMORY(bytes)   MEMORY%
+ip-192-168-149-221.us-west-2.compute.internal   23m          1%        350Mi           9%
+ip-192-168-225-105.us-west-2.compute.internal   20m          1%        290Mi           7%
+
+
+$ kubectl top pod -n kube-system
+
+NAME                              CPU(cores)   MEMORY(bytes)
+aws-node-9xktg                    2m           17Mi
+aws-node-mj95f                    2m           18Mi
+kube-dns-7cc87d595-8s9l6          2m           25Mi
+kube-proxy-rlhjm                  2m           10Mi
+kube-proxy-x5t6x                  2m           10Mi
+metrics-server-5bd986444f-d5kr9   1m           12Mi
+```
+
+To get more information regarding this issue, please refer the [issue #131 of metrics-server](https://github.com/kubernetes-incubator/metrics-server/issues/131).
 
 # Further Reading
 
