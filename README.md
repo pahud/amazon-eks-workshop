@@ -7,7 +7,7 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 
 ## Getting Started
 
-[Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md) or check the [8-min Youtube walkthrough video](https://www.youtube.com/watch?v=3-OZqA5p1HA) by Arun Gupta
+[Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md) or check the [8min Youtube walkthrough video](https://www.youtube.com/watch?v=3-OZqA5p1HA) by Arun Gupta
 
 [Customize your nodegroup(worker nodes)](./01-nodegroup/customize-nodegroup.md)
 
