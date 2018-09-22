@@ -110,7 +110,7 @@ Get the `cluster-info` or `get all` resources.
 
 
 
-Now your Amazon EKS cluster is ready!  You may proceed to [customize your nodegroup](./customize-nodegroup.md) now.
+Now your Amazon EKS cluster is ready!  You may proceed to [customize your nodegroup](../01-nodegroup/customize-nodegroup.md) now.
 
 If you need to delete this clusrer, run `eksctl delete cluster —name=<CLUSTER_NAME>` to trigger the deletion of the stack.
 
