@@ -73,6 +73,8 @@ eksctl website:  https://eksctl.io/
 ![0-c9-0](../images/00-c9-07.png)
 
 
+## create cluster with eksctl
+
 
 11. Create your Amazon EKS cluster witn `eksctl` and spin up a nodegroup with `2 nodes`
 
@@ -82,6 +84,8 @@ $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-
 
 ![0-c9-0](../images/00-c9-08.png)
 
+
+## Generate kubeconfig with aws eks update-kubeconfig
 
 
 And create/update your `$HOME/.kube/config` with `aws eks update-kubeconfig`
