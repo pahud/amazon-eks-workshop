@@ -84,23 +84,19 @@ $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-
 
 
 
-Then you should be able to `get nodes` like this:
+And create/update your `$HOME/.kube/config` with `aws eks update-kubeconfig`
 
 ```
-kubectl --kubeconfig=/home/ec2-user/.kube/eksctl/clusters/{YOUR_CLUSTER_NAME} get nodes
+aws eks update-kubeconfig --name eksdemo
 ```
 
-Let's configure an `alias` in `~/.bash_profile`.  Open `~/.bash_profile` with your favorite editor e.g. `vi ~/.bash_profile` and add an alias in the bottom:
+(Ensure your aws-cli version is at least **1.16.18**, or follow [this gist](https://gist.github.com/pahud/b748f726515d3b073b997d92b595b526) to upgrade your aws-cli in Cloud9 )
+
+After executing `aws eks update-kubeconfig`, a new context will be generated in `$HOME/.kube/config` and you can execute `kubectl get no` to list all nodes in the nodegroup.
+
+
 
 ![0-c9-0](../images/00-c9-09.png)
-
-
-
-Now you can execute `kubectl` command with the aliased command`kc`.
-
-
-
-![0-c9-0](../images/00-c9-10.png)
 
 
 
@@ -110,7 +106,7 @@ Get the `cluster-info` or `get all` resources.
 
 
 
-Now your Amazon EKS cluster is ready! 
+Now your Amazon EKS cluster is ready!  You may proceed to [customize your nodegroup](./customize-nodegroup.md) now.
 
 If you need to delete this clusrer, run `eksctl delete cluster —name=<CLUSTER_NAME>` to trigger the deletion of the stack.
 
