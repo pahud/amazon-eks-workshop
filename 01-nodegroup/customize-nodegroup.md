@@ -60,6 +60,11 @@ You can list nodes from `ASG` and nodes from `SpotFleet` like this:
 
 (this cluster consists of 2 on-demand nodes fron ASG and 2 spot nodes from spotfleet)
 
+### Scheduled Scaling with Spot Fleet
+
+You may configure the scheduled scaling policy of your Spot Fleet in response to the predictable traffic spikes or just set max/min to 0 for your testing/development environment for the weeekend for cost optimization. Check this [tweet](https://twitter.com/pahudnet/status/1043720930638188544).
+
+
 ### What's Next?
 
 The official Amazon EKS nodegroup cloudformation template can be found here - https://github.com/awslabs/amazon-eks-ami/blob/master/amazon-eks-nodegroup.yaml  - you can always customize your own nodegroup template based on the official one.
