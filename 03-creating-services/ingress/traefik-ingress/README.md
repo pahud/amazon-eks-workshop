@@ -1,4 +1,4 @@
-## traefik-ingress
+# traefik-ingress
 
 This guide will walk you through building a Amazon EKS cluster with Traefik Ingress with `ALB` for HTTPS termionation. 
 
@@ -108,7 +108,7 @@ traefik-ingress-lb-x9lts   1/1       Running   0          15m       192.168.142.
 ```
 
 
-## admin interface
+## traefik admin dashboard
 
 Get the 1st Pod of trafic ingress controller
 ```
@@ -121,7 +121,7 @@ And check the value of the podName
 $ echo $podName
 traefik-ingress-lb-9pc2w
 ```
-(your podName may have different suffix with the above)
+(your podName may have different suffix)
 
 
 Create a port-forward from localhost:8580 into the pod:8580
