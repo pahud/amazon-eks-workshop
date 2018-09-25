@@ -1,4 +1,4 @@
-# traefik-ingress
+# traefik ingress with Amazon EKS
 
 This guide will walk you through building a Amazon EKS cluster with Traefik Ingress with `ALB` for HTTPS termionation. 
 
