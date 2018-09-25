@@ -133,7 +133,18 @@ Forwarding from [::1]:8580 -> 8580
 Handling connection for 8580
 ```
 
-Open http://localhost:8580 from your local browser
+Open http://localhost:8580 from your local browser and you got the dashboard now!
+
+![](images/06.png)
+
+
+
+![](images/07.png)
+
+
+
+![](images/08.png)
+
 
 
 ## Clean up
