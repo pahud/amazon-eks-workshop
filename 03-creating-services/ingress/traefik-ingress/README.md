@@ -1,4 +1,4 @@
-# traefik ingress with Amazon EKS
+# Traefik ingress with Amazon EKS
 
 This guide will walk you through building a Amazon EKS cluster with Traefik Ingress with `ALB` for HTTPS termionation. 
 
@@ -108,9 +108,9 @@ traefik-ingress-lb-x9lts   1/1       Running   0          15m       192.168.142.
 ```
 
 
-## traefik admin dashboard
+## Traefik admin dashboard
 
-Get the 1st Pod of trafic ingress controller
+Get the 1st Pod of traefik ingress controller
 ```
 podName=$(kubectl -n kube-system get po -l name=traefik-ingress-lb -o jsonpath='{.items[0].metadata.name}')
 
