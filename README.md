@@ -99,6 +99,10 @@ https://twitter.com/pahudnet/status/1030628314044452865
 
 https://twitter.com/pahudnet/status/1030629435664302085
 
+## multi-tenant topology
+
+Multiple EKS clusters sharing single VPC and ALB - ([tweet](https://twitter.com/pahudnet/status/1044988111694876672)|[architecture](https://pbs.twimg.com/media/DoCLDjfUwAA4s2_.jpg))
+
 
 
 ## Contributors
