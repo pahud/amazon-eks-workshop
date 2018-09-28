@@ -43,6 +43,8 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 
 [Storage(PV, PVC and StatefulSet)](./02-kubectl-basic-admin/storage.md)
 
+Amazon EKS with Amazon EFS
+
 
 
 ## Monitoring
