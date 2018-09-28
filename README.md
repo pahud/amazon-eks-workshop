@@ -85,6 +85,8 @@ Fluentd integration
 
 [Amazon EKS with AWS CodeBuild integration](https://github.com/pahud/eks-kubectl-docker#codebuild-support) 
 
+[Automate Kubernetes deployment on Amazon EKS with buddy.works](https://buddy.works/blog/amazon-eks-kubernetes)
+
 
 
 ## Service Mesh
