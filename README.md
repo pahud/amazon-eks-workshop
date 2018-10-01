@@ -89,7 +89,9 @@ Fluentd integration
 
 [Automate Kubernetes deployment on Amazon EKS with buddy.works](https://buddy.works/blog/amazon-eks-kubernetes)
 
+## Service Discovery
 
+[ExternalDNS and Route53 Auto Naming API](https://dev.classmethod.jp/cloud/aws/external-dns-eks/)
 
 ## Service Mesh
 
