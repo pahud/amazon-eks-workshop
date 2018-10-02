@@ -102,6 +102,10 @@ Fluentd integration
 
 Getting Started with Istio on Amazon EKS - https://amzn.to/2wo3inY
 
+## CloudWatch Events Integration
+
+[CloudWatch Events scheduled kubectl execution from within AWS Fargate](https://github.com/pahud/eks-kubectl-docker#aws-fargate-with-cloudwatch-event-scheduled-events)([Tweet](https://twitter.com/pahudnet/status/1047166317042618368))
+
 
 
 ## Amazon EKS and Amazon API Gateway Integration
