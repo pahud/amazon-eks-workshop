@@ -87,6 +87,8 @@ Fluentd integration
 
 [Amazon EKS with AWS CodeBuild integration](https://github.com/pahud/eks-kubectl-docker#codebuild-support) 
 
+[Amazon EKS Continuous Deployment Sample using AWS CodePipeline](https://github.com/chankh/eksutil/tree/master/lambda/codepipeline)
+
 [Automate Kubernetes deployment on Amazon EKS with buddy.works](https://buddy.works/blog/amazon-eks-kubernetes)
 
 ## Service Discovery
