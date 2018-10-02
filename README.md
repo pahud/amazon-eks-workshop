@@ -38,7 +38,7 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 [pahud/eks-lambda-drainer](https://github.com/pahud/eks-lambda-drainer) - Amazon EKS node drainer with AWS Lambda
 
 [Blog - Interacting with EKS via Lambda
-](http://www.nickaws.net/aws/2018/09/03/Interacting-with-EKS-via-Lambda.html) by [@nbrandaleone](https://twitter.com/nbrandaleone)
+](http://www.nickaws.net/aws/2018/09/03/Interacting-with-EKS-via-Lambda.html) by [@nbrandaleone](https://github.com/nbrandaleone)
 
 
 
