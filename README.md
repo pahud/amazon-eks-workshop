@@ -100,7 +100,7 @@ Fluentd integration
 
 ## Service Mesh
 
-[Install Istio 1.x on Amazon EKS](https://github.com/pahud/amazon-eks-workshop/tree/master/06-service-mesh/Istio)
+[Installing Istio 1.x on Amazon EKS](https://github.com/pahud/amazon-eks-workshop/tree/master/06-service-mesh/Istio)
 
 Blog - Getting Started with Istio on Amazon EKS - https://amzn.to/2wo3inY
 
