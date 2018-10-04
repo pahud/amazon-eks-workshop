@@ -1,4 +1,4 @@
-# Istio on Amazon EKS
+# Installing Istio 1.x on Amazon EKS
 
 
 
