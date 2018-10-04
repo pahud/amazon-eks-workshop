@@ -25,9 +25,6 @@ $ kubectl apply -f https://gist.githubusercontent.com/pahud/14e6cc08f3a7e65cd9b0
 ### Initialize the Helm
 
 ```
-// modify your KUBECONFIG path
-$ export KUBECONFIG=/Users/hunhsieh/.kube/eksctl/clusters/eksdemo3
-
 $ helm init --service-account tiller --upgrade
 $HELM_HOME has been configured at /Users/hunhsieh/.helm.
 
