@@ -236,3 +236,4 @@ Introducing Horizontal Pod Autoscaling for Amazon EKS | AWS Open Source Blog - h
 
 Horizontal Pod Autoscaler - Kubernetes - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 
+Configure Kubernetes Autoscaling With Custom Metrics - https://docs.bitnami.com/kubernetes/how-to/configure-autoscaling-custom-metrics/
