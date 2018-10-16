@@ -104,6 +104,9 @@ Fluentd integration
 
 Blog - Getting Started with Istio on Amazon EKS - https://amzn.to/2wo3inY
 
+How to integrate AWS ALB with istio v1.0 by *Chuan-Yen Chiang* - https://medium.com/@cy.chiang/how-to-integrate-aws-alb-with-istio-v1-0-b17e07cae156
+
+
 ## CloudWatch Events Integration
 
 [CloudWatch Events scheduled kubectl execution from within AWS Fargate](https://github.com/pahud/eks-kubectl-docker#aws-fargate-with-cloudwatch-event-scheduled-events)([Tweet](https://twitter.com/pahudnet/status/1047166317042618368))
