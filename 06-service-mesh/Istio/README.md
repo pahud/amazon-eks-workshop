@@ -198,3 +198,5 @@ $ kubectl label namespace default istio-injection-
 Istio official docs - https://istio.io/docs/
 
 Github - istio/istio - https://github.com/istio/istio
+
+How to integrate AWS ALB with istio v1.0 by Chuan-Yen Chiang - https://medium.com/@cy.chiang/how-to-integrate-aws-alb-with-istio-v1-0-b17e07cae156
