@@ -59,7 +59,7 @@ deployment.extensions "cluster-autoscaler" created
 $ kubectl logs -f deployment/cluster-autoscaler -n kube-system
 ```
 
-And you should be able to see the low flowing like below
+And you should be able to see the log flowing like below
 
 
 
