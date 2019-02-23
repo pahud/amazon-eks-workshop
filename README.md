@@ -131,9 +131,15 @@ https://twitter.com/pahudnet/status/1030628314044452865
 
 https://twitter.com/pahudnet/status/1030629435664302085
 
+
+## Amazon EKS and CloudWatch Integration
+
+[K8s Cloudwatch Adapter](https://github.com/chankh/k8s-cloudwatch-adapter) - and subscribe this [issue](https://github.com/aws/containers-roadmap/issues/120) in AWS container public roadmap.
+
 ## multi-tenant topology
 
 Multiple EKS clusters sharing single VPC and ALB - ([tweet](https://twitter.com/pahudnet/status/1044988111694876672)|[architecture](https://pbs.twimg.com/media/DoCLDjfUwAA4s2_.jpg))
+
 
 
 
