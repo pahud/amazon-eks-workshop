@@ -5,11 +5,17 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 
 
 
-## Getting Started
+## Getting Started - create cluster
 
-[Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md) or check the [8min Youtube walkthrough video](https://www.youtube.com/watch?v=3-OZqA5p1HA) by Arun Gupta
+Options to create your own Amazon EKS environment:
 
-[Customize your nodegroup(worker nodes)](./01-nodegroup/customize-nodegroup.md)
+💥 1. Use [pahud/eks-templates](https://github.com/pahud/eks-templates) to simply the `cluster` and `nodegroup` of `mixed instance types` and `purchase options` creation by simply `make create-eks-cluster`(highly recommended).
+
+2. [Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md) or refer to the [8min Youtube walkthrough video](https://www.youtube.com/watch?v=3-OZqA5p1HA) by `Arun Gupta`
+
+3. Create Amazon EKS cluster with `eksctl` from [eksworkshop.com](https://eksworkshop.com/eksctl/)
+
+## Basic Administration
 
 [Working with kubectl for basic administrations](./02-kubectl-basic-admin/kubectl-basic-admin.md)
 
@@ -35,7 +41,7 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 
 ## Spot and Lambda Integration
 
-[pahud/eks-lambda-drainer](https://github.com/pahud/eks-lambda-drainer) - Amazon EKS node drainer with AWS Lambda
+💥 [pahud/eks-lambda-drainer](https://github.com/pahud/eks-lambda-drainer) - Amazon EKS node drainer with AWS Lambda
 
 [Blog - Interacting with EKS via Lambda
 ](http://www.nickaws.net/aws/2018/09/03/Interacting-with-EKS-via-Lambda.html) by [@nbrandaleone](https://github.com/nbrandaleone)
@@ -96,6 +102,8 @@ Fluentd integration
 
 [Blog - Continuous Delivery with Amazon EKS and Jenkins X](https://amzn.to/2JM2luY) 
 
+💥 Create 12 EKS clusters in parallel one for each in different regions with `Codepipeline` cross region capabilities([demo tweet](https://twitter.com/pahudnet/status/1098597986165239811) and [cfn template](https://github.com/pahud/eks-templates/blob/master/cloudformation/codepipeline.yml))
+
 ## Service Discovery
 
 [ExternalDNS and Route53 Auto Naming API](https://dev.classmethod.jp/cloud/aws/external-dns-eks/)
@@ -113,7 +121,9 @@ How to integrate AWS ALB with istio v1.0 by *Chuan-Yen Chiang* - https://medium.
 
 [CloudWatch Events scheduled kubectl execution from within AWS Fargate](https://github.com/pahud/eks-kubectl-docker#aws-fargate-with-cloudwatch-event-scheduled-events)([Tweet](https://twitter.com/pahudnet/status/1047166317042618368))
 
+## Amazon EKS and AWS Lambda Integration
 
+💥 [pahud/lambda-layer-kubectl](https://github.com/pahud/lambda-layer-kubectl) - AWS Lambda layer for kubectl - Run `kubectl` command in AWS Lambda with` Autoscaling Group LifecycleHook` integration.
 
 ## Amazon EKS and Amazon API Gateway Integration
 
