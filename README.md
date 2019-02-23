@@ -140,9 +140,3 @@ https://twitter.com/pahudnet/status/1030629435664302085
 
 Multiple EKS clusters sharing single VPC and ALB - ([tweet](https://twitter.com/pahudnet/status/1044988111694876672)|[architecture](https://pbs.twimg.com/media/DoCLDjfUwAA4s2_.jpg))
 
-
-
-
-## Contributors
-
-- [Pahud Hsieh](https://github.com/pahud)([Twitter](https://twitter.com/pahudnet)/[Facebook](https://www.facebook.com/pahudnet)). 
