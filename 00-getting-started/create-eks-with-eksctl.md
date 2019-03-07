@@ -51,12 +51,14 @@ eksctl website:  https://eksctl.io/
 
 
 
-8. Download the `kubectl` and `heptio-authenticator-aws` binaries and save to `~/bin`. Check the Amazon EKS User Guide for [Getting Started](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html). Download the Linux binary for `kubectl` and `heptio-authenticator-aws` one by one.
+
+
+8. Download the `kubectl` and `aws-iam-authenticator` binaries and save to `~/bin`. Check the Amazon EKS User Guide for [Getting Started](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html). Download the Linux binary for `kubectl` and `heptio-authenticator-aws` one by one.
 
    ```
    $ mkdir ~/bin
-   $ curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl ~/bin/
-   $ curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator && chmod +x aws-iam-authenticator && mv aws-iam-authenticator ~/bin/ && cd ~/bin && ln -s aws-iam-authenticator heptio-authenticator-aws
+   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl ~/bin/
+   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/aws-iam-authenticator && chmod +x aws-iam-authenticator && mv aws-iam-authenticator ~/bin/
    ```
 
 9. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
@@ -65,7 +67,6 @@ eksctl website:  https://eksctl.io/
    $ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
    sudo mv /tmp/eksctl /usr/local/bin
    ```
-
 
 
 10. run `eksctl help`, you should be able to see the `help` messages
@@ -83,6 +84,31 @@ $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-
 ```
 
 ![0-c9-0](../images/00-c9-08.png)
+
+Alternatively, you may also create your cluster with cluster config file.
+
+```
+cat << EOF > cluster.yaml
+apiVersion: eksctl.io/v1alpha4
+kind: ClusterConfig
+
+metadata:
+  name: eksdemo
+  region: us-west-2
+
+nodeGroups:
+  - name: ng0
+    instanceType: m5.large
+    desiredCapacity: 2
+EOF
+```
+
+And then, just 
+```
+eksctl create cluster -f cluster.yaml
+```
+check more config samples from `eksctl` [github](https://github.com/weaveworks/eksctl/tree/master/examples)
+
 
 
 ## Generate kubeconfig with aws eks update-kubeconfig
