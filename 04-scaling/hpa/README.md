@@ -2,49 +2,11 @@
 
 ### Prerequisities
 
-[Create your Amazon EKS cluster with eksctl](https://github.com/pahud/amazon-eks-workshop/blob/master/00-getting-started/create-eks-with-eksctl.md)
-
-[Customize your nodegroup(worker nodes)](https://github.com/pahud/amazon-eks-workshop/blob/master/01-nodegroup/customize-nodegroup.md) **make sure to use the latest EKS-optimized AMI(lookup the latest EKS-optimized AMI in [the doc](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html))* 
-
-make sure your Amazon EKS cluster is **eks.2** platform ([platform versions](https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html))
-
-
+[Create your Amazon EKS cluster with eksctl](https://github.com/pahud/amazon-eks-workshop/blob/master/00-getting-started/create-eks-with-eksctl.md) or with [pahud/eks-templates](https://github.com/pahud/eks-templates). 
 
 ### Install the metrics-server
 
-
-
-git clone the metrics-server from https://github.com/kubernetes-incubator/metrics-server
-
-```
-$ kubectl apply -f deploy/1.8+/
-clusterrolebinding.rbac.authorization.k8s.io "metrics-server:system:auth-delegator" created
-rolebinding.rbac.authorization.k8s.io "metrics-server-auth-reader" created
-apiservice.apiregistration.k8s.io "v1beta1.metrics.k8s.io" created
-serviceaccount "metrics-server" created
-deployment.extensions "metrics-server" created
-service "metrics-server" created
-clusterrole.rbac.authorization.k8s.io "system:metrics-server" created
-clusterrolebinding.rbac.authorization.k8s.io "system:metrics-server" created
-```
-
-
-
-check `/apis/metrics.k8s.io/v1beta1/nodes` and make sure you receive the JSON response.
-
-```
-$ kubectl get --raw "/apis/metrics.k8s.io/v1beta1/nodes" | jq .
-{
-  "kind": "NodeMetricsList",
-  "apiVersion": "metrics.k8s.io/v1beta1",
-  "metadata": {
-    "selfLink": "/apis/metrics.k8s.io/v1beta1/nodes"
-  },
-  "items": []
-}
-```
-
-
+Follow the official Amazon EKS document to [install the kubernetes metrics server](https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html)
 
 create an deployment and service
 
