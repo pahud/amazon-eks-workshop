@@ -85,6 +85,21 @@ $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-
 
 ![0-c9-0](../images/00-c9-08.png)
 
+Or like this
+```
+eksctl create cluster \
+  --name=eksdemo \
+  --region=us-west-2 \
+  --nodes=2 \
+  --tags environment=develop \
+  --node-type=m5.large \
+  --ssh-access \
+  --ssh-public-key=your_key_name \
+  --node-private-networking \
+  --vpc-private-subnets=subnet-ed2b93c3,subnet-e6c38eac \
+  --vpc-public-subnets=subnet-36368e18,subnet-aec68be4
+  ```
+
 Alternatively, you may also create your cluster with cluster config file.
 
 ```
