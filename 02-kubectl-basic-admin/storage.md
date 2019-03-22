@@ -20,7 +20,7 @@ gp2 (default)   kubernetes.io/aws-ebs   28m
 
 ```
 $ kubectl apply -f nginx-with-pvc.yaml
-persistentvolumeclaim "nginx-pvc" created
+persistentvolumeclaim "nginx-with-pvc" created
 deployment.extensions "nginx-with-pvc" created
 ```
 
