@@ -37,4 +37,4 @@ spec:
       volumes:
       - name: my-pvc
         persistentVolumeClaim:
-          claimName: nginx-pvc
+          claimName: nginx-with-pvc
