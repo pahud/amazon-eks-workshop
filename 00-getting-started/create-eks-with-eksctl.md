@@ -57,8 +57,12 @@ eksctl website:  https://eksctl.io/
 
    ```
    $ mkdir ~/bin
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl ~/bin/
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/aws-iam-authenticator && chmod +x aws-iam-authenticator && mv aws-iam-authenticator ~/bin/
+   
+   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl -O ~/bin/kubectl
+   $ chmod +x $_
+   
+   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator -O ~/bin/aws-iam-authenticator
+   $ chmod +x $_
    ```
 
 9. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
@@ -98,7 +102,7 @@ eksctl create cluster \
   --node-private-networking \
   --vpc-private-subnets=subnet-ed2b93c3,subnet-e6c38eac \
   --vpc-public-subnets=subnet-36368e18,subnet-aec68be4
-  ```
+```
 
 Alternatively, you may also create your cluster with cluster config file.
 
