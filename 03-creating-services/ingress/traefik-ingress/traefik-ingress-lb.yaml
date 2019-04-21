@@ -38,4 +38,4 @@ spec:
         - --web.address=:8580
         - --kubernetes
       nodeSelector:
-         asgnode: "true"
+         lifecycle: "OnDemand"
