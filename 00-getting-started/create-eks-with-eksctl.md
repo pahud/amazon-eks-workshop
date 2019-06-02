@@ -12,6 +12,8 @@
 
 eksctl website:  https://eksctl.io/
 
+You may follow the Amazon EKS official document - [Getting Started with eksctl](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html) to complete the cluster creation with `eksctl` or just follow the steps below.
+
 
 
 ## Steps
@@ -53,15 +55,12 @@ eksctl website:  https://eksctl.io/
 
 
 
-8. Download the `kubectl` and `aws-iam-authenticator` binaries and save to `~/bin`. Check the Amazon EKS User Guide for [Getting Started](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html). Download the Linux binary for `kubectl` and `heptio-authenticator-aws` one by one.
+8. Download the `kubectl` and save to `~/bin`. Check the Amazon EKS User Guide for [Installing kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html). 
 
    ```
    $ mkdir ~/bin
    
    $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl -O ~/bin/kubectl
-   $ chmod +x $_
-   
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator -O ~/bin/aws-iam-authenticator
    $ chmod +x $_
    ```
 
