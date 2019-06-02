@@ -9,11 +9,11 @@ This is a collection of Amazon EKS popular topics and assets aimed to help you s
 
 Options to create your own Amazon EKS environment:
 
-💥 1. Use [pahud/eks-templates](https://github.com/pahud/eks-templates) to simply the `cluster` and `nodegroup` of `mixed instance types` and `purchase options` creation by simply `make create-eks-cluster`(highly recommended).
 
-2. [Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md) or refer to the [8min Youtube walkthrough video](https://www.youtube.com/watch?v=3-OZqA5p1HA) by `Arun Gupta`
+1. [Create your EKS Cluster with eksctl](./00-getting-started/create-eks-with-eksctl.md)
 
-3. Create Amazon EKS cluster with `eksctl` from [eksworkshop.com](https://eksworkshop.com/eksctl/)
+💥 2. Use [pahud/eks-templates](https://github.com/pahud/eks-templates) to simply the `cluster` and `nodegroup` of `mixed instance types` and `purchase options` creation by simply `make create-eks-cluster`.
+
 
 ## Basic Administration
 
