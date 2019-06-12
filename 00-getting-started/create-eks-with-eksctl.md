@@ -122,12 +122,49 @@ EOF
 ```
 
 And then, just 
+
 ```
 eksctl create cluster -f cluster.yaml
 ```
-check more config samples from `eksctl` [github](https://github.com/weaveworks/eksctl/tree/master/examples)
 
 
+## Nodegroup of Mixed Instance Types and Purchase Options
+
+If you prefer to hybrid on-demand and spot instances with mixed instance types in your nodegroup, you may also create your nodegroup like this:
+
+
+
+```yaml
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+    name: eksdemo
+    region: ap-northeast-1
+
+nodeGroups:
+    - name: ng-1
+      minSize: 2
+      maxSize: 5
+      instancesDistribution:
+        instanceTypes: ["t3.small", "t3.medium", "t3.large"] # At least two instance types should be specified
+        onDemandBaseCapacity: 0
+        onDemandPercentageAboveBaseCapacity: 0
+        spotInstancePools: 2
+```
+
+save the YAML body as `mixed-ng.yaml` and create your cluster 
+
+```bash
+$ eksctl create cluster -f mixed-ng.yaml
+```
+
+This will spin up an Amazon EKS cluster with nodegroup of mixed instance types and purchase options(ondemand+spot), however, as we define `onDemandBaseCapacity: 0` and `onDemandPercentageAboveBaseCapacity: 0`, actually there will be only spot instances for the best cost optimization. You may configure those options to optionally have some ondemand instances as your baseline. Check [AWS document](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html) for more details about those attributes.
+
+
+
+More cluster config samples from `eksctl` [github](https://github.com/weaveworks/eksctl/tree/master/examples)
 
 ## Generate kubeconfig with aws eks update-kubeconfig
 
