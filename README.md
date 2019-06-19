@@ -27,11 +27,21 @@ Options to create your own Amazon EKS environment:
 
 [ClusterIP, NodePort and LoadBalancer](https://github.com/pahud/amazon-eks-workshop/tree/master/03-creating-services)
 
-[Ingress Options](./03-creating-services/ingress-options.md)
+## Ingress Options
 
 ALB Ingress Controller([GitHub](https://github.com/kubernetes-sigs/aws-alb-ingress-controller)) 
 
  - [Installing alb-ingress-controller with Helm](https://github.com/pahud/aws-containers-workshop/tree/master/lab2#put-extra-role-policy-on-the-eks-nodegroup)
+ 
+Traefik Ingress([official doc](https://docs.traefik.io/user-guide/kubernetes/)|[walkthrough](./03-creating-services/ingress/traefik-ingress/README.md))
+
+Nginx Ingress([github](https://github.com/kubernetes/ingress-nginx))
+
+HAProxy Kubernetes Ingress([official doc](https://www.haproxy.com/blog/haproxy-2-0-and-beyond/#kubernetes-ingress-controller))
+
+Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
+
+
 
    
 
@@ -162,4 +172,7 @@ https://twitter.com/pahudnet/status/1030629435664302085
 ## Multi-tenancy
 
 Multiple EKS clusters sharing single VPC and ALB - ([tweet](https://twitter.com/pahudnet/status/1044988111694876672)|[architecture](https://pbs.twimg.com/media/DoCLDjfUwAA4s2_.jpg))
+
+## Public References
+**SkyScanner: Building Highly-Available, Multi-Region Kubernetes Clusters on 100% Amazon EC2 Spot**([Youtube](https://www.youtube.com/watch?v=99nNHsbwBpg))
 
