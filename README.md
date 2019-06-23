@@ -37,7 +37,7 @@ Traefik Ingress([official doc](https://docs.traefik.io/user-guide/kubernetes/)|[
 
 Nginx Ingress([github](https://github.com/kubernetes/ingress-nginx))
 
-HAProxy Kubernetes Ingress([official doc](https://www.haproxy.com/blog/haproxy-2-0-and-beyond/#kubernetes-ingress-controller))
+HAProxy Kubernetes Ingress([official doc](https://www.haproxy.com/blog/haproxy-2-0-and-beyond/#kubernetes-ingress-controller)|[github](https://github.com/haproxytech/kubernetes-ingress))
 
 Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
 
