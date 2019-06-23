@@ -88,19 +88,18 @@ aws-cli/1.16.184 Python/2.7.16 Linux/4.14.109-80.92.amzn1.x86_64 botocore/1.12.1
 
 9. Download the `kubectl` and save to `~/bin`. Check the Amazon EKS User Guide for [Installing kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html). 
 
-   ```
-   $ mkdir ~/bin
-   
-   $ wget https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/kubectl -O ~/bin/kubectl
-   $ chmod +x $_
-   ```
+```bash
+$ curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/kubectl -o kubectl
+$ chmod +x $_
+$ sudo mv $_ /usr/local/bin/
+```
 
 10. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
 
-   ```
-   $ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-   sudo mv /tmp/eksctl /usr/local/bin
-   ```
+```bash
+$ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+```
 
 
 11. run `eksctl help`, you should be able to see the `help` messages
@@ -113,14 +112,14 @@ aws-cli/1.16.184 Python/2.7.16 Linux/4.14.109-80.92.amzn1.x86_64 botocore/1.12.1
 
 12. Create your Amazon EKS cluster witn `eksctl` and spin up a nodegroup with `2 nodes`
 
-```
+```bash
 $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-public-key <EXISTING_SSH_KEY_NAME>
 ```
 
 ![0-c9-0](../images/00-c9-08.png)
 
 Or like this
-```
+```bash
 eksctl create cluster \
   --name=eksdemo \
   --region=us-west-2 \
@@ -136,7 +135,7 @@ eksctl create cluster \
 
 Alternatively, you may also create your cluster with cluster config file.
 
-```
+```bash
 cat << EOF > cluster.yaml
 apiVersion: eksctl.io/v1alpha4
 kind: ClusterConfig
@@ -154,7 +153,7 @@ EOF
 
 And then, just 
 
-```
+```bash
 eksctl create cluster -f cluster.yaml
 ```
 
@@ -202,7 +201,7 @@ More cluster config samples from `eksctl` [github](https://github.com/weaveworks
 
 And create/update your `$HOME/.kube/config` with `aws eks update-kubeconfig`
 
-```
+```bash
 aws eks update-kubeconfig --name eksdemo
 ```
 
