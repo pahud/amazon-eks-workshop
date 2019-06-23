@@ -206,8 +206,6 @@ And create/update your `$HOME/.kube/config` with `aws eks update-kubeconfig`
 aws eks update-kubeconfig --name eksdemo
 ```
 
-(Ensure your aws-cli version is at least **1.16.18**, or follow [this gist](https://gist.github.com/pahud/b748f726515d3b073b997d92b595b526) to upgrade your aws-cli in Cloud9 )
-
 After executing `aws eks update-kubeconfig`, a new context will be generated in `$HOME/.kube/config` and you can execute `kubectl get no` to list all nodes in the nodegroup.
 
 
