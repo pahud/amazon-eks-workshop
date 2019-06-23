@@ -35,19 +35,50 @@ You may follow the Amazon EKS official document - [Getting Started with eksctl](
 
 ![0-c9-0](../images/00-c9-03.png)
 
-5. We need to turn off the Cloud9 temporarily provided IAM credentials. 
+5. install the latest `aws-cli`
+
+copy and paste the following script in the Cloud9 terminal and press enter.
+
+```bash
+cat << EOF | bash
+cleanup() {
+  rm -rf awscli-bundle
+  rm -f awscli-bundle.zip
+}
+
+
+cleanup
+rm -rf awscli-bundle*
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+EOF
+```
+check the awscli path and version
+
+```bash
+# check the path
+$ which aws
+/usr/local/bin/aws
+# check the version
+$ aws --version
+aws-cli/1.16.184 Python/2.7.16 Linux/4.14.109-80.92.amzn1.x86_64 botocore/1.12.174
+```
+(make suer your version >= `1.16.184`)
+
+6. We need to turn off the Cloud9 temporarily provided IAM credentials. 
 
 ![0-c9-0](../images/00-c9-04.png)
 
 
 
-6. When you turn off the temporary credentials, you should not be able to un AWS CLI now.
+7. When you turn off the temporary credentials, you should not be able to un AWS CLI now.
 
 ![0-c9-0](../images/00-c9-05.png)
 
 
 
-7. execute `aws configure` to configure the credentials for your IAM user. Make sure this IAM User has **AdministratorAccess** and run `aws sts get-caller-identity` - you should be able to see the returned JSON output like this.
+8. execute `aws configure` to configure the credentials for your IAM user. Make sure this IAM User has **AdministratorAccess** and run `aws sts get-caller-identity` - you should be able to see the returned JSON output like this.
 
 ![0-c9-0](../images/00-c9-06.png)
 
@@ -55,7 +86,7 @@ You may follow the Amazon EKS official document - [Getting Started with eksctl](
 
 
 
-8. Download the `kubectl` and save to `~/bin`. Check the Amazon EKS User Guide for [Installing kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html). 
+9. Download the `kubectl` and save to `~/bin`. Check the Amazon EKS User Guide for [Installing kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html). 
 
    ```
    $ mkdir ~/bin
@@ -64,7 +95,7 @@ You may follow the Amazon EKS official document - [Getting Started with eksctl](
    $ chmod +x $_
    ```
 
-9. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
+10. Download the `eksctl` from `eksctl.io`(actually it will download from GitHub)
 
    ```
    $ curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
@@ -72,7 +103,7 @@ You may follow the Amazon EKS official document - [Getting Started with eksctl](
    ```
 
 
-10. run `eksctl help`, you should be able to see the `help` messages
+11. run `eksctl help`, you should be able to see the `help` messages
 
 ![0-c9-0](../images/00-c9-07.png)
 
@@ -80,7 +111,7 @@ You may follow the Amazon EKS official document - [Getting Started with eksctl](
 ## create cluster with eksctl
 
 
-11. Create your Amazon EKS cluster witn `eksctl` and spin up a nodegroup with `2 nodes`
+12. Create your Amazon EKS cluster witn `eksctl` and spin up a nodegroup with `2 nodes`
 
 ```
 $ eksctl create cluster --name=<CLUSTER_NAME> --nodes 2 --auto-kubeconfig --ssh-public-key <EXISTING_SSH_KEY_NAME>
