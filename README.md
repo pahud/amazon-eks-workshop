@@ -112,6 +112,8 @@ Fluentd integration
 
 [Amazon EKS with AWS CodeBuild integration](https://github.com/pahud/eks-kubectl-docker#codebuild-support) 
 
+💥[Amazon EKS Canary Deployment with AWS App Mesh and AWS Step Function](https://github.com/aws-samples/eks-canary-deployment-stepfunction)
+
 [Amazon EKS Continuous Deployment Sample using AWS CodePipeline](https://github.com/chankh/eksutil/tree/master/lambda/codepipeline)
 
 [Automate Kubernetes deployment on Amazon EKS with buddy.works](https://buddy.works/blog/amazon-eks-kubernetes)
@@ -130,7 +132,7 @@ Fluentd integration
 
 ## Service Mesh
 
-💥 [AWS Appmesh with EKS Reference Architecture](https://github.com/pahud/aws-appmesh-eks-refarch)
+💥[Amazon EKS Canary Deployment with AWS App Mesh and AWS Step Function](https://github.com/aws-samples/eks-canary-deployment-stepfunction)
 
 [Installing Istio 1.x on Amazon EKS](https://github.com/pahud/amazon-eks-workshop/tree/master/06-service-mesh/Istio)
 
