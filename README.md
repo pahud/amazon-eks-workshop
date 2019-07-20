@@ -14,7 +14,8 @@ Options to create your own Amazon EKS environment:
 
 2. [aws-samples/amazon-eks-refarch-cloudformation](https://github.com/aws-samples/amazon-eks-refarch-cloudformation) -  Reference architecture of Amazon EKS with modern cloudformation templates. Create the `cluster` and `nodegroup` of `mixed instance types` and `purchase options` by simply `make create-eks-cluster`.
 
-   
+3. 💥 [Create EKS cluster and nodegroups with AWS CDK](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
+) by aws-samples/amazon-eks-refarch-cloudformation   
 
 
 ## Basic Administration
