@@ -50,6 +50,11 @@ Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
 [Create your 1st app from scratch and deploy into Amazon EKS](https://github.com/pahud/greeting)
 
 
+## AWS CDK with Amazon EKS
+
+💥 [CDK samples](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
+) from aws-samples/amazon-eks-refarch-cloudformation
+
 
 ## Helm and Charts
 
