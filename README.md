@@ -65,7 +65,7 @@ Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
 
 ## Spot and Lambda Integration
 
-💥 [pahud/eks-lambda-drainer](https://github.com/pahud/eks-lambda-drainer) - Amazon EKS node drainer with AWS Lambda
+💥 [awslabs/amazon-eks-serverless-drainer](https://github.com/awslabs/amazon-eks-serverless-drainer) - Amazon EKS node drainer with AWS Lambda
 
 [Blog - Interacting with EKS via Lambda
 ](http://www.nickaws.net/aws/2018/09/03/Interacting-with-EKS-via-Lambda.html) by [@nbrandaleone](https://github.com/nbrandaleone)
