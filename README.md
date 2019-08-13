@@ -38,6 +38,8 @@ Traefik Ingress([official doc](https://docs.traefik.io/user-guide/kubernetes/)|[
 
 Nginx Ingress([github](https://github.com/kubernetes/ingress-nginx))
 
+NLB+Nginx Ingress([AWS blogpost](https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/))
+
 HAProxy Kubernetes Ingress([official doc](https://www.haproxy.com/blog/haproxy-2-0-and-beyond/#kubernetes-ingress-controller)|[github](https://github.com/haproxytech/kubernetes-ingress))
 
 Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
