@@ -89,7 +89,7 @@ aws-cli/1.16.184 Python/2.7.16 Linux/4.14.109-80.92.amzn1.x86_64 botocore/1.12.1
 9. Download the `kubectl` and save to `~/bin`. Check the Amazon EKS User Guide for [Installing kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html). 
 
 ```bash
-$ curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/kubectl -o kubectl
+$ curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl -o kubectl
 $ chmod +x $_
 $ sudo mv $_ /usr/local/bin/
 ```
