@@ -163,14 +163,6 @@ How to integrate AWS ALB with istio v1.0 by *Chuan-Yen Chiang* - https://medium.
 
 
 
-## Amazon EKS and Amazon API Gateway Integration
-
-https://twitter.com/pahudnet/status/1030628314044452865
-
-https://twitter.com/pahudnet/status/1030629435664302085
-
-
-
 ## Amazon EKS and CloudWatch Integration
 
 [K8s Cloudwatch Adapter](https://github.com/chankh/k8s-cloudwatch-adapter) - and subscribe this [issue](https://github.com/aws/containers-roadmap/issues/120) in AWS container public roadmap.
