@@ -22,7 +22,9 @@ Options to create your own Amazon EKS environment:
 
 [Working with kubectl for basic administrations](./02-kubectl-basic-admin/kubectl-basic-admin.md)
 
+## Amazon EKS with AWS Fargate
 
+ 💥 [Amazon EKS and AWS Fargate with alb-ingress-controller](./eks-fargate/README.md)
 
 ## Creating Services
 
