@@ -122,3 +122,12 @@ kubectl -n kube-system logs -f po/alb-ingress-controller-78cb78cffb-ddkj8
 ![](images/eks-fargate-07.png)
 
 You will see the welcome message from nginx.
+
+## clean up
+
+```sh
+kubectl delete -f nginx-deploy-svc.yaml
+kubectl delete -f nginx-ingress.yaml
+kubectl delete -f alb-ingress-controller.yaml
+eksctl --region ap-northeast-1 delete cluster --name eks-fargate-cluster
+```
