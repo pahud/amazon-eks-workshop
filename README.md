@@ -3,8 +3,6 @@ Amazon EKS workshop walkthrough repository.
 
 This is a collection of Amazon EKS popular topics and assets aimed to help you successfully build your Amazon EKS workload.
 
-
-
 ## Getting Started - create cluster
 
 Options to create your own Amazon EKS environment:
@@ -14,7 +12,7 @@ Options to create your own Amazon EKS environment:
 
 2. [aws-samples/amazon-eks-refarch-cloudformation](https://github.com/aws-samples/amazon-eks-refarch-cloudformation) -  Reference architecture of Amazon EKS with modern cloudformation templates. Create the `cluster` and `nodegroup` of `mixed instance types` and `purchase options` by simply `make create-eks-cluster`.
 
-3. 💥 [Create EKS cluster and nodegroups with AWS CDK](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
+3. [Create EKS cluster and managed nodegroup with AWS CDK](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
 ) by aws-samples/amazon-eks-refarch-cloudformation   
 
 
@@ -24,9 +22,9 @@ Options to create your own Amazon EKS environment:
 
 ## Amazon EKS with AWS Fargate
 
- 💥 [Amazon EKS and AWS Fargate with alb-ingress-controller](./eks-fargate/README.md)
+[Amazon EKS and AWS Fargate with alb-ingress-controller](./eks-fargate/README.md)
  
- 💥 [(Youtube)AWS re:Invent 2019: [NEW LAUNCH!] Running Kubernetes Applications on AWS Fargate (CON326-R1)](https://www.youtube.com/watch?v=m-3tMXmWWQw&feature=youtu.be)
+[(Youtube)AWS re:Invent 2019: [NEW LAUNCH!] Running Kubernetes Applications on AWS Fargate (CON326-R1)](https://www.youtube.com/watch?v=m-3tMXmWWQw&feature=youtu.be)
 
 ## Creating Services
 
@@ -59,7 +57,7 @@ Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
 
 ## AWS CDK with Amazon EKS
 
-💥 [CDK samples](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
+[CDK samples](https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/master/cdk/README.md
 ) from aws-samples/amazon-eks-refarch-cloudformation
 
 
@@ -68,10 +66,15 @@ Kong Ingress([github](https://github.com/Kong/kubernetes-ingress-controller))
 [Installing Helm](./00-getting-started/installing-helm.md)
 
 
+## EKS and EC2 Spot Block with AWS CDK
+
+💥 [pahud/eks-spot](https://github.com/pahud/eks-spot)
+
+
 
 ## Spot and Lambda Integration
 
-💥 [awslabs/amazon-eks-serverless-drainer](https://github.com/awslabs/amazon-eks-serverless-drainer) - Amazon EKS node drainer with AWS Lambda
+[awslabs/amazon-eks-serverless-drainer](https://github.com/awslabs/amazon-eks-serverless-drainer) - Amazon EKS node drainer with AWS Lambda
 
 [Blog - Interacting with EKS via Lambda
 ](http://www.nickaws.net/aws/2018/09/03/Interacting-with-EKS-via-Lambda.html) by [@nbrandaleone](https://github.com/nbrandaleone)
@@ -163,7 +166,7 @@ How to integrate AWS ALB with istio v1.0 by *Chuan-Yen Chiang* - https://medium.
 
 ## Amazon EKS and AWS Lambda Integration
 
-💥 [aws-samples/lambda-layer-kubectl](https://github.com/aws-samples/aws-lambda-layer-kubectl) - AWS Lambda layer for kubectl - Run `kubectl` command in AWS Lambda 
+[aws-samples/lambda-layer-kubectl](https://github.com/aws-samples/aws-lambda-layer-kubectl) - AWS Lambda layer for kubectl - Run `kubectl` command in AWS Lambda 
 
 
 
